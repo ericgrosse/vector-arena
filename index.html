@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last Room Standing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="frame">
+    <canvas id="game" width="1280" height="720" aria-label="First person shooter game"></canvas>
+    <div class="overlay">
+      <div class="panel top-left">
+        <h1 id="levelTitle">Last Room Standing</h1>
+        <p id="levelSubtitle">Storm a neon-bathed killbox and wipe out every hostile in the facility.</p>
+      </div>
+      <div class="panel top-right" id="hud"></div>
+      <div class="panel bottom-left">
+        <p><strong>Move</strong> `WASD`</p>
+        <p><strong>Look</strong> mouse or arrows</p>
+        <p><strong>Shoot</strong> click or space</p>
+        <p><strong>Switch</strong> `1 2 3`</p>
+        <p><strong>Exit</strong> `Esc`</p>
+        <p><strong>Interact</strong> step onto powerups</p>
+      </div>
+      <div class="menu-screen" id="menuScreen">
+        <div class="menu-card">
+          <p class="menu-kicker">Arena Select</p>
+          <h2>Choose Your Battleground</h2>
+          <p class="menu-copy">Pick the classic maze sweep, a wide-open killfield, or a procedurally generated sector that can swing between both styles.</p>
+          <div class="menu-options">
+            <button class="menu-option" data-level="maze" type="button">
+              <span class="menu-option-title">Maze Complex</span>
+              <span class="menu-option-copy">Tight corridors, corners, and hunting through choke points.</span>
+            </button>
+            <button class="menu-option" data-level="open" type="button">
+              <span class="menu-option-title">Open Killfield</span>
+              <span class="menu-option-copy">A broad arena with sightlines, flanking, and room to strafe.</span>
+            </button>
+            <button class="menu-option" data-level="random" type="button">
+              <span class="menu-option-title">Random Sector</span>
+              <span class="menu-option-copy">Generated fresh each run, sometimes sprawling and open, sometimes tighter and more dangerous.</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-screen hidden" id="exitConfirmScreen">
+        <div class="menu-card">
+          <p class="menu-kicker">Exit Level</p>
+          <h2>Are you sure you want to exit the level?</h2>
+          <p class="menu-copy">You’ll return to the starting screen and can choose a different battleground or jump back in.</p>
+          <div class="menu-options">
+            <button class="menu-option" id="confirmExit" type="button">
+              <span class="menu-option-title">Yes, Exit</span>
+              <span class="menu-option-copy">Leave the current run and go back to level select.</span>
+            </button>
+            <button class="menu-option" id="cancelExit" type="button">
+              <span class="menu-option-title">No, Stay</span>
+              <span class="menu-option-copy">Close this prompt and keep fighting in the current level.</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="victory-banner hidden" id="victoryBanner">VICTORY! Press any key to continue</div>
+      <div class="center-note" id="message">Click the arena to lock the cursor and begin.</div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
